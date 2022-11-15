@@ -36,7 +36,7 @@ export const GetUserContacts = countrycode => {
                             },
                         ],
 
-                        name: `${item.familyName} ${item.middleName}`,
+                        name: item.displayName, //`${item.familyName} ${item.middleName}`,
                         mobile_number: x.number
                             .replace(' ', '')
                             .replace(/-|\s/g, ''),

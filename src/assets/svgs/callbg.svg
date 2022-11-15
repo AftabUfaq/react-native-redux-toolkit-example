@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <g id="Group_97" data-name="Group 97" transform="translate(-313 -335)">
+    <g id="OTP_shape" data-name="OTP shape" transform="translate(313 335)">
+      <rect id="Base" width="32" height="32" rx="16" fill="#0096ff"/>
+    </g>
+    <path id="Icon_ionic-md-call" data-name="Icon ionic-md-call" d="M16.32,13.192a8.161,8.161,0,0,1-2.468-.382.65.65,0,0,0-.7.174l-1.53,1.53A10.456,10.456,0,0,1,7.038,9.923l1.53-1.529a.725.725,0,0,0,.174-.7,7.562,7.562,0,0,1-.417-2.5.7.7,0,0,0-.7-.7H5.2a.7.7,0,0,0-.7.7,11.811,11.811,0,0,0,11.82,11.82.7.7,0,0,0,.7-.7V13.887A.7.7,0,0,0,16.32,13.192Z" transform="translate(318.992 340.492)" fill="#fff"/>
+  </g>
+</svg>
