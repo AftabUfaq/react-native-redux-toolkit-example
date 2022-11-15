@@ -42,8 +42,7 @@ const MobileProfileScreen = ({navigation}) => {
         const usermobiledata = {
             id: '300',
             name: 'Aftab Ameem',
-            photo:
-                'https://callerapp.net/finder/apis/v1/images/profileavatar.png',
+            photo: 'https://xxxx.net/finder/apis/v1/images/profileavatar.png',
             email: 'engr.aftabufaq@gmail.com',
             mobile_number: '3408906107',
         };
