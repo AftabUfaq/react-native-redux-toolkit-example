@@ -4,6 +4,7 @@ import {RFValue} from 'react-native-responsive-fontsize';
 import {useSelector} from 'react-redux';
 import ContactItem from '../components/ContactItem';
 import CustomHeader from '../components/CustomHeader';
+import SearchInput from '../components/SearchInput';
 import {wp} from '../constants/scaling';
 import {colors, fonts} from '../constants/theme';
 
@@ -25,6 +26,7 @@ const HomeScreen = () => {
                 isdrawer={true}
                 onPress={() => navigation.openDrawer()}
             />
+            <SearchInput />
             <SectionList
                 sections={contact_sections}
                 renderItem={({item}) => <ContactItem item={item} />}
