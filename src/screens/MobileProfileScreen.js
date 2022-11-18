@@ -1,25 +1,25 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import {
     NativeModules,
     StyleSheet,
     Text,
     TouchableOpacity,
-    View,
+    View
 } from 'react-native';
-import {RFValue} from 'react-native-responsive-fontsize';
+import { RFValue } from 'react-native-responsive-fontsize';
 import {
     heightPercentageToDP as hp,
-    widthPercentageToDP as wp,
+    widthPercentageToDP as wp
 } from 'react-native-responsive-screen';
-import {useDispatch} from 'react-redux';
-import {color, fontmedium, lightgray, white} from '../constants/colors';
-import {findByMatchingProperties, GetUserContacts} from '../logic/getcontact';
-import {setContacts} from '../store/actions/ContactActions';
-import {UserLoggedIn} from '../store/actions/LoginActions';
+import { useDispatch } from 'react-redux';
+import { color, fontmedium, lightgray, white } from '../constants/colors';
+import { findByMatchingProperties, GetUserContacts } from '../logic/getcontact';
+import { setContacts } from '../store/actions/ContactActions';
+import { UserLoggedIn } from '../store/actions/LoginActions';
 const MobileProfileScreen = ({navigation}) => {
     const dispatch = useDispatch();
     const {GetCountryCodeModules} = NativeModules;
-    const [defalutCountry, setDefaultCountry] = useState({
+    const [, setDefaultCountry] = useState({
         callingCode: '92',
         code: 'PK',
         name: 'Pakistan',
@@ -31,7 +31,7 @@ const MobileProfileScreen = ({navigation}) => {
             var results = findByMatchingProperties({
                 code: `${countrycode}`.toLocaleUpperCase(),
             });
-            GetUserContacts('PK').then(data => {
+            GetUserContacts(countrycode).then(data => {
                 dispatch(setContacts(data));
             });
             setDefaultCountry(results[0]);

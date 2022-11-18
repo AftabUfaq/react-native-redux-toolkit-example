@@ -1,12 +1,10 @@
 import React from 'react';
-import {SafeAreaView, SectionList, StatusBar, StyleSheet} from 'react-native';
-import {RFValue} from 'react-native-responsive-fontsize';
+import {SafeAreaView, SectionList, StatusBar} from 'react-native';
 import {useSelector} from 'react-redux';
 import ContactItem from '../components/ContactItem';
 import CustomHeader from '../components/CustomHeader';
 import SearchInput from '../components/SearchInput';
-import {wp} from '../constants/scaling';
-import {colors, fonts} from '../constants/theme';
+import {colors} from '../constants/theme';
 
 const renderItem = ({item, index}) => <ContactItem item={item} index={index} />;
 const HomeScreen = () => {
@@ -66,59 +64,3 @@ const HomeScreen = () => {
 };
 
 export default HomeScreen;
-
-const styles = StyleSheet.create({
-    dialer_icon: {
-        justifyContent: 'center',
-        alignItems: 'center',
-        borderRadius: 100,
-        backgroundColor: 'transparent',
-    },
-    empty: {
-        marginVertical: 20,
-        alignSelf: 'center',
-    },
-    section: {
-        flex: 1,
-        paddingHorizontal: 10,
-        backgroundColor: '#EEE',
-        justifyContent: 'center',
-        width: '100%',
-    },
-    sectionText: {
-        fontSize: 14,
-        paddingLeft: 10,
-    },
-    row: {
-        minHeight: wp(14),
-        maxHeight: wp(14),
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        backgroundColor: '#ECF0F3',
-        marginVertical: 3,
-        paddingHorizontal: 5,
-        paddingLeft: 10,
-    },
-    rContainer: {
-        marginLeft: 0,
-    },
-    title: {
-        fontSize: RFValue(15),
-        fontFamily: fonts.Bold,
-        backgroundColor: '#ECF0F3',
-        paddingVertical: 1,
-        paddingHorizontal: 10,
-        borderRadius: 10,
-        color: 'rgba(25, 53, 102, 1)',
-        textAlign: 'left',
-    },
-    subtitle: {
-        fontSize: RFValue(14),
-        marginTop: 0,
-        fontFamily: fonts.Medium,
-        color: 'rgba(25, 53, 102, 1)',
-        paddingHorizontal: 10,
-        borderRadius: 30,
-    },
-});

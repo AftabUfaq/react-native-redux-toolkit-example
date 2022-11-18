@@ -1,22 +1,23 @@
-import React, { useEffect, useState } from 'react';
-import { Alert, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {Alert, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {
     checkMultiple,
     PERMISSIONS,
-    requestMultiple
+    requestMultiple,
 } from 'react-native-permissions';
-import { RFValue } from 'react-native-responsive-fontsize';
+import {RFValue} from 'react-native-responsive-fontsize';
 import {
     heightPercentageToDP as hp,
-    widthPercentageToDP as wp
+    widthPercentageToDP as wp,
 } from 'react-native-responsive-screen';
-import { useDispatch } from 'react-redux';
-import { color, fontmedium, lightgray, white } from '../constants/colors';
-import { AcceptPrivacyPolicy } from '../store/actions/LoginActions';
+
+import {useDispatch} from 'react-redux';
+import {color, fontmedium, lightgray, white} from '../constants/colors';
+import {AcceptPrivacyPolicy} from '../store/actions/LoginActions';
 const PrivacyPolicyScreen = ({navigation}) => {
     const [phonepermissions, setPhonepermission] = useState(false);
     const dispatch = useDispatch();
-    
+
     useEffect(() => {
         checkMultiple([
             PERMISSIONS.ANDROID.READ_CONTACTS,
@@ -38,7 +39,7 @@ const PrivacyPolicyScreen = ({navigation}) => {
                     results['android.permission.READ_CONTACTS'] === 'granted' &&
                     results['android.permission.WRITE_CONTACTS'] === 'granted'
                 ) {
-                    dispatch(AcceptPrivacyPolicy(true))
+                    dispatch(AcceptPrivacyPolicy(true));
                     navigation.navigate('MobileProfileScreen');
                 } else if (
                     results['android.permission.READ_CONTACTS'] === 'denied'
@@ -55,7 +56,9 @@ const PrivacyPolicyScreen = ({navigation}) => {
     };
 
     return (
-        <View style={{flex: 1, backgroundColor: '#fff', justifyContent: 'center'}}>
+        <View
+            style={{flex: 1, backgroundColor: '#fff', justifyContent: 'center'}}
+        >
             <View style={styles.leftballon} />
             <View style={styles.rightballon} />
             <View style={{...styles.logo}} />
